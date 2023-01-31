@@ -1,9 +1,15 @@
 package transport;
 
 public class Car extends Transport <DriverB> {
+    @Override
+    public void printType() {
 
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+    }
+
+    public BodyType bodyType;
+    public Car(String brand, String model, double engineVolume, BodyType bodyType, DriverB driver) {
         super(brand, model, engineVolume, driver);
+        this.bodyType = bodyType;
     }
 
     @Override
@@ -39,6 +45,14 @@ public class Car extends Transport <DriverB> {
         int maxSpeed = (int) (min + (max-min)*Math.random());
         System.out.println("Максимальная скорость для автомобиля " + maxSpeed);
 
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     //polya

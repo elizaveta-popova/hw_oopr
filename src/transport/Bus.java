@@ -1,8 +1,16 @@
 package transport;
 
 public class Bus extends Transport <DriverD> {
-    public Bus(String brand, String model, double engineVolume, DriverD driver) {
+    public Seats seats;
+
+    @Override
+    public void printType() {
+
+    }
+
+    public Bus(String brand, String model, double engineVolume, Seats seats, DriverD driver) {
         super(brand, model, engineVolume, driver);
+        this.seats=seats;
     }
 
     @Override

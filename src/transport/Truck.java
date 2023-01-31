@@ -1,10 +1,17 @@
 package transport;
 
 public class Truck extends Transport <DriverC> {
-    public Truck(String brand, String model, double engineVolume, DriverC driver) {
-        super(brand, model, engineVolume, driver);
+    public LoadCapacity loadCapacity;
+
+    @Override
+    public void printType() {
+
     }
 
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, DriverC driver) {
+        super(brand, model, engineVolume, driver);
+        this.loadCapacity=loadCapacity;
+    }
     @Override
     public void printInfo() {
 
