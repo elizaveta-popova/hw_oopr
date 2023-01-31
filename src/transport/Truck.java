@@ -12,7 +12,15 @@ public class Truck extends Transport <DriverC> {
         super(brand, model, engineVolume, driver);
         this.loadCapacity=loadCapacity;
     }
+
     @Override
+    public void startDiagnostics() {
+
+    }
+
+    @Override
+
+
     public void printInfo() {
 
     }

@@ -1,10 +1,7 @@
 package transport;
 
 public class Car extends Transport <DriverB> {
-    @Override
-    public void printType() {
 
-    }
 
     public BodyType bodyType;
     public Car(String brand, String model, double engineVolume, BodyType bodyType, DriverB driver) {
@@ -12,6 +9,13 @@ public class Car extends Transport <DriverB> {
         this.bodyType = bodyType;
     }
 
+    @Override
+    public void startDiagnostics() {
+
+    }
+
+    public void printType() {
+    }
     @Override
     public void printInfo() {
 

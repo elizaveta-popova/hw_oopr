@@ -10,9 +10,30 @@ public abstract class Driver {
         this.licence = licence;
         this.grade = grade;
     }
+
+    public abstract void checkLicence() throws LicenceException;
+
     public abstract void startMove ();
     public abstract void finishMove ();
     public abstract void refill ();
+
+    public abstract void  checkLicence (boolean licence) throws LicenceException;
+    public static void checkLicence (Driver... drivers) {
+        for (Driver driver: drivers){
+            try {
+                driver.checkLicence(driver.licence);
+            } catch (UnsupportedOperationException e) {
+                if (driver.licence = false) {
+                System.out.println("Ошибка.");
+                System.out.println(e.getMessage());
+            } }
+            catch (LicenceException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
 
     public String getName() {
         return name;

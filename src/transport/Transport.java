@@ -62,7 +62,23 @@ public abstract class Transport <T extends Driver> implements Competing {
     public abstract void printInfo ();
     public abstract void startMove ();
     public abstract void finishMove ();
+//    public void startDiagnostics () throws CantStartDiagnosticsException {
+//        System.out.println("Начинаю диагностику транспортного средства.");
+//    }
 
+   public abstract void  startDiagnostics () throws CantStartDiagnosticsException;
+    public static void startDiagnostics (Transport... transports) {
+    for (Transport transport : transports){
+        try {
+            transport.startDiagnostics();
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Ошибка.");
+            System.out.println(e.getMessage());
+        } catch (CantStartDiagnosticsException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
 //    public void printInfo () {
 //        System.out.println("Водитель " + driver.getName() + " управляет автомобилем" + getBrand() + " и будет участвовать в заезде");
 //    }

@@ -8,6 +8,12 @@ public class Bus extends Transport <DriverD> {
 
     }
 
+    @Override
+    public void startDiagnostics() throws CantStartDiagnosticsException {
+        throw new CantStartDiagnosticsException("Диагностика недоступна", this);
+
+    }
+
     public Bus(String brand, String model, double engineVolume, Seats seats, DriverD driver) {
         super(brand, model, engineVolume, driver);
         this.seats=seats;

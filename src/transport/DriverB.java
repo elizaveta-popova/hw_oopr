@@ -6,6 +6,12 @@ public class DriverB extends Driver{
     }
 
     @Override
+    public void checkLicence() throws LicenceException {
+
+    }
+
+
+    @Override
     public void startMove() {
         System.out.println("Водитель категории B " + getName() + "начал движение.");
     }
@@ -18,5 +24,10 @@ public class DriverB extends Driver{
     @Override
     public void refill() {
         System.out.println("Водитель категории B " + getName() + "заправляет авто.");
+    }
+
+    @Override
+    public void checkLicence(boolean licence) throws LicenceException {
+
     }
 }

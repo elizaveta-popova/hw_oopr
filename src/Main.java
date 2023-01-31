@@ -1,6 +1,8 @@
 
 import transport.*;
 
+import static transport.Transport.startDiagnostics;
+
 public class Main {
     public static void main(String[] args) {
 //        Car Lada = new Car(
@@ -106,6 +108,13 @@ public class Main {
         System.out.println("Водитель " + bus3.getDriver().getName() + " управляет автомобилем " + bus3.getBrand() + " и будет участвовать в заезде");
         System.out.println("Водитель " + bus4.getDriver().getName() + " управляет автомобилем " + bus4.getBrand() + " и будет участвовать в заезде");
 
+        Transport.startDiagnostics(car1, car2, car3, car4,
+                truck1, truck2, truck3, truck4,
+                bus1, bus2, bus3, bus4);
+        Driver.checkLicence(bus1.getDriver(), bus2.getDriver(), bus3.getDriver(), bus4.getDriver(),
+                car1.getDriver(), car2.getDriver(), car3.getDriver(), car4.getDriver(),
+                truck1.getDriver(), truck2.getDriver(), truck3.getDriver(), truck4.getDriver());
+
 //        for (int i = 0; i <= 4 ; i++) {
 //            DriverD driverD = new DriverD("Driver cat.D №" + i, true, 5+i);
 //         Bus bus = new Bus(
@@ -140,4 +149,17 @@ public class Main {
             System.out.println("Данных по транспортному средству недостаточно");
         }
     }
+
+//    public static void startDiagnostics (Transport... transports) {
+//        for (Transport transport : transports){
+//            try {
+//                transport.startDiagnostics();
+//            } catch (UnsupportedOperationException e) {
+//                System.out.println("Ошибка.");
+//                System.out.println(e.getMessage());
+//            } catch (CantStartDiagnosticsException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//    }
 }
