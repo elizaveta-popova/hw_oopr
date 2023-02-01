@@ -1,11 +1,16 @@
 package transport;
 
+import drivers.DriverB;
+import mechanics.Mechanic;
+
 public class Car extends Transport <DriverB> {
 
 
     public BodyType bodyType;
-    public Car(String brand, String model, double engineVolume, BodyType bodyType, DriverB driver) {
-        super(brand, model, engineVolume, driver);
+
+
+    public Car(String brand, String model, double engineVolume, BodyType bodyType, DriverB driver, Mechanic mechanic) {
+        super(brand, model, engineVolume, driver, mechanic);
         this.bodyType = bodyType;
     }
 

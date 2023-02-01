@@ -1,4 +1,6 @@
-package transport;
+package drivers;
+
+import drivers.Driver;
 
 public class LicenceException extends Exception {
     private Driver driver;

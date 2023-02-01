@@ -1,5 +1,8 @@
 package transport;
 
+import drivers.DriverD;
+import mechanics.Mechanic;
+
 public class Bus extends Transport <DriverD> {
     public Seats seats;
 
@@ -14,10 +17,12 @@ public class Bus extends Transport <DriverD> {
 
     }
 
-    public Bus(String brand, String model, double engineVolume, Seats seats, DriverD driver) {
-        super(brand, model, engineVolume, driver);
-        this.seats=seats;
+
+    public Bus(String brand, String model, double engineVolume, Seats seats, DriverD driver, Mechanic mechanic) {
+        super(brand, model, engineVolume, driver, mechanic);
+        this.seats = seats;
     }
+
 
     @Override
     public void printInfo() {

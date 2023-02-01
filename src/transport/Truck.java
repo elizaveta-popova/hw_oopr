@@ -1,5 +1,8 @@
 package transport;
 
+import drivers.DriverC;
+import mechanics.Mechanic;
+
 public class Truck extends Transport <DriverC> {
     public LoadCapacity loadCapacity;
 
@@ -8,10 +11,11 @@ public class Truck extends Transport <DriverC> {
 
     }
 
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, DriverC driver) {
-        super(brand, model, engineVolume, driver);
-        this.loadCapacity=loadCapacity;
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, DriverC driver, Mechanic mechanic) {
+        super(brand, model, engineVolume, driver, mechanic);
+        this.loadCapacity = loadCapacity;
     }
+
 
     @Override
     public void startDiagnostics() {

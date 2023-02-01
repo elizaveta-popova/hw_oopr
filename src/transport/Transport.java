@@ -1,11 +1,38 @@
 package transport;
 
+import drivers.Driver;
+import mechanics.Mechanic;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
+    private Mechanic mechanic;
 
+    public Transport(String brand, String model, double engineVolume, T driver, Mechanic mechanic) {
+        if (brand==null || brand.isEmpty() || model==null || model.isEmpty()) {
+            this.brand = "default";
+            this.model = "default";
+
+        } else {
+            this.brand = brand;
+            this.model = model;
+        }
+        this.mechanic=mechanic;
+        setEngineVolume(engineVolume);
+        setDriver(driver);
+//        if (country == null || country.isEmpty()) {
+//            this.country = "default";
+//        } this.country = country;
+//        setColor(color);
+//        if (year <=0) {
+//            this.year = 2000;
+//        } else {
+//            this.year = year;
+//        }
+//        setMaxSpeed(maxSpeed);
+    }
 
 //    private String color;
 //    private final int year;
@@ -26,38 +53,16 @@ public abstract class Transport <T extends Driver> implements Competing {
 //                "Максимальная скорость: " + maxSpeed + ". ";
     }
 
-
-
-    public Transport(String brand,
-                     String model,
-                     double engineVolume,
-                     T driver
-                     //                     String color,
-//                     int year,
-//                     String country,
-//                     int maxSpeed
-                    ) {
-        if (brand==null || brand.isEmpty() || model==null || model.isEmpty()) {
-            this.brand = "default";
-            this.model = "default";
-
-        } else {
-            this.brand = brand;
-            this.model = model;
-        }
-        setEngineVolume(engineVolume);
-        setDriver(driver);
-//        if (country == null || country.isEmpty()) {
-//            this.country = "default";
-//        } this.country = country;
-//        setColor(color);
-//        if (year <=0) {
-//            this.year = 2000;
-//        } else {
-//            this.year = year;
-//        }
-//        setMaxSpeed(maxSpeed);
+    public Mechanic getMechanic() {
+        return mechanic;
     }
+
+    public void setMechanic(Mechanic mechanic) {
+        this.mechanic = mechanic;
+    }
+
+
+
     public abstract void printType ();
     public abstract void printInfo ();
     public abstract void startMove ();
@@ -139,5 +144,16 @@ public abstract class Transport <T extends Driver> implements Competing {
 //        } else {
 //            this.maxSpeed = maxSpeed;
 //        }
+    }
+
+    public void requestDriverMechanicAndCarInformation(Car car, Driver driver, Mechanic mechanic) {
+        System.out.println("Автомобилем " + car.getBrand() + " управляет водитель " + driver.getName() + ". К тс прикреплён механик " + mechanic.getName());
+    }
+
+    public void requestDriverMechanicAndCarInformation(Bus bus, Driver driver, Mechanic mechanic) {
+        System.out.println("Автобусом " + bus.getBrand() + " управляет водитель " + driver.getName()+ ". К тс прикреплён механик " + mechanic.getName());
+    }
+    public void requestDriverMechanicAndCarInformation(Truck truck, Driver driver, Mechanic mechanic) {
+        System.out.println("Грузовиком " + truck.getBrand() + " управляет водитель " + driver.getName()+ ". К тс прикреплён механик " + mechanic.getName());
     }
 }

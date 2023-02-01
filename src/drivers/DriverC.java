@@ -1,6 +1,6 @@
-package transport;
+package drivers;
 
-public class DriverC extends Driver{
+public class DriverC extends Driver {
     public DriverC(String name, boolean licence, int grade) {
         super(name, licence, grade);
     }
