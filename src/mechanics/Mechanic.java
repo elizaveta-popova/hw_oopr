@@ -2,6 +2,7 @@ package mechanics;
 
 import transport.Bus;
 import transport.Car;
+import transport.Transport;
 import transport.Truck;
 
 public class Mechanic {
@@ -10,6 +11,8 @@ public class Mechanic {
     private boolean repairsCars;
     private boolean repairsBuses;
     private boolean repairsTrucks;
+
+
 
     public Mechanic(String name,
                     String company,
@@ -23,24 +26,11 @@ public class Mechanic {
         this.repairsTrucks = repairsTrucks;
     }
 
-    public void perfomService (Car car, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " проводит техобслуживание машины " + car.getBrand() + car.getModel() + ".");
+    public void perfomService (Transport transport, Mechanic mechanic) {
+        System.out.println("Маханик по имени " + name + " проводит техобслуживание транспортного средства " + transport.getBrand() + transport.getModel() + ".");
     }
-    public void perfomService (Truck truck, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " проводит техобслуживание грузовика " + truck.getBrand() + truck.getModel() + ".");
-    }
-    public void perfomService (Bus bus, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " проводит техобслуживание автобуса " + bus.getBrand() + bus.getModel() + ".");
-    }
-
-    public void repair (Car car, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " чинит машину " + car.getBrand() + car.getModel() + ".");
-    }
-    public void repair (Truck truck, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " чинит грузовик " + truck.getBrand() + truck.getModel() + ".");
-    }
-    public void repair (Bus bus, Mechanic mechanic) {
-        System.out.println("Маханик по имени " + name + " чинит автобус " + bus.getBrand() + bus.getModel() + ".");
+    public void repair (Transport transport, Mechanic mechanic) {
+        System.out.println("Механик по имени " + name + " чинит транспортное средство " + transport.getBrand() + transport.getModel() + ".");
     }
 
 

@@ -3,12 +3,20 @@ package transport;
 import drivers.Driver;
 import mechanics.Mechanic;
 
+import java.util.ArrayList;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
     private Mechanic mechanic;
+
+    private final ArrayList<Mechanic> mechanics = new ArrayList<Mechanic>();
+
+    public ArrayList<Mechanic> getMechanics() {
+        return mechanics;
+    }
 
     public Transport(String brand, String model, double engineVolume, T driver, Mechanic mechanic) {
         if (brand==null || brand.isEmpty() || model==null || model.isEmpty()) {

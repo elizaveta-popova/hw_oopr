@@ -141,6 +141,7 @@ public class Main {
         Mechanic mechanic4 = new Mechanic("Максим Максимов", "компания Х", true, true, true);
         Mechanic mechanic5 = new Mechanic("Денис Сидоров", "компания О", true, true, false);
 
+
         ArrayList<Mechanic> mechanics = new ArrayList<Mechanic>();
         mechanics.add(mechanic1);
         mechanics.add(mechanic2);
