@@ -5,9 +5,7 @@ import drivers.DriverD;
 import mechanics.Mechanic;
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -175,6 +173,37 @@ public class Main {
         for (Transport transport : list) {
             System.out.println(transport.getBrand() + " тех. обслуживание пройдено");
         }        Transport transport = list.remove ();
+
+
+        Map<Transport, Mechanic> mechAndHisTs = new HashMap<>();
+        mechAndHisTs.put (car1, car1.getMechanic());
+        mechAndHisTs.put (car2, car2.getMechanic());
+        mechAndHisTs.put (car3, car3.getMechanic());
+        mechAndHisTs.put (car4, car4.getMechanic());
+        mechAndHisTs.put (bus1, bus1.getMechanic());
+        mechAndHisTs.put (bus2, bus2.getMechanic());
+        mechAndHisTs.put (bus3, bus3.getMechanic());
+        mechAndHisTs.put (bus4, bus4.getMechanic());
+        mechAndHisTs.put (truck1, truck1.getMechanic());
+        mechAndHisTs.put (truck2, truck2.getMechanic());
+        mechAndHisTs.put (truck3, truck3.getMechanic());
+        mechAndHisTs.put (truck4, truck4.getMechanic());
+
+        HashMap<Transport, Mechanic> duplicatMechAndHisTs = new HashMap<>();
+
+        Set<Map.Entry<Transport, Mechanic>> entrySet = mechAndHisTs.entrySet();
+        Iterator<Map.Entry<Transport, Mechanic>> iterator = entrySet.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry<Transport, Mechanic> entry = iterator.next();
+            Transport key = entry.getKey();
+            Mechanic value = entry.getValue();
+            if(duplicatMechAndHisTs.containsKey(value)) {
+                duplicatMechAndHisTs.put(key, duplicatMechAndHisTs.get(value));
+            } else {
+                duplicatMechAndHisTs.put(key, value);
+            }
+        }
+        System.out.println(duplicatMechAndHisTs);
 
 
 //        for (int i = 0; i <= 4 ; i++) {
