@@ -3,12 +3,13 @@ import drivers.DriverB;
 import drivers.DriverC;
 import drivers.DriverD;
 import mechanics.Mechanic;
+import mechanics.Service;
 import transport.*;
 
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 //        Car Lada = new Car(
 //                "Lada",
 //                "Granta",
@@ -161,19 +162,11 @@ public class Main {
         truck3.requestDriverMechanicAndCarInformation(truck3, truck3.getDriver(), truck3.getMechanic());
         truck4.requestDriverMechanicAndCarInformation(truck4, truck4.getDriver(), truck4.getMechanic());
 
-        Queue <Transport> list = new LinkedList<>();
-        list.add(car1);
-        list.add(car2);
-        list.add(car3);
-        list.add(car4);
-        list.add(truck1);
-        list.add(truck2);
-        list.add(truck3);
-        list.add(truck4);
-        for (Transport transport : list) {
-            System.out.println(transport.getBrand() + " тех. обслуживание пройдено");
-        }        Transport transport = list.remove ();
-
+        Service service = new Service();
+        service.addAuto(car1);
+        service.addAuto(bus1);
+        service.addAuto(truck1);
+        service.checkupAuto();
 
         Map<Transport, Mechanic> mechAndHisTs = new HashMap<>();
         mechAndHisTs.put (car1, car1.getMechanic());
