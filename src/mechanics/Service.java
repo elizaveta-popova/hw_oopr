@@ -22,5 +22,7 @@ public class Service {
         if (transport != null) {
             transport.getMechanics().get(0).checkupAuto;
         }
+
+
     }
 }

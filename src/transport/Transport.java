@@ -69,6 +69,12 @@ public abstract class Transport <T extends Driver> implements Competing {
         this.mechanic = mechanic;
     }
 
+    public void addMechanic (Mechanic mechanic) {
+        if (!mechanics.contains(mechanic)) {
+            mechanics.add(mechanic);
+        }
+    }
+
 
 
     public abstract void printType ();

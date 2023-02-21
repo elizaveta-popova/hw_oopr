@@ -149,6 +149,14 @@ public class Main {
         mechanics.add(mechanic5);
         System.out.println(mechanics);
 
+        Map <Transport <?>, List<Mechanic>> transportMechanicMap = new HashMap<>();
+        for (Transport <?> driver: drivers) {
+                transportMechanicMap.put (driver, driver.getMechanics());
+        }
+
+                System.out.println(transportMechanicMap);
+
+
         car1.requestDriverMechanicAndCarInformation(car1, car1.getDriver(), car1.getMechanic());
         car2.requestDriverMechanicAndCarInformation(car2, car2.getDriver(), car2.getMechanic());
         car3.requestDriverMechanicAndCarInformation(car3, car3.getDriver(), car3.getMechanic());
